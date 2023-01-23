@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class TestDemoQaWebtablesAllNegative {
     private static final String PAGE_URL = "https://demoqa.com/webtables";
 
     @Test
+    @DisplayName("Заполнение строки вебтаблицы с негативным значением поля Mail")
     public void setMailFieldNegative(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -28,11 +30,11 @@ public class TestDemoQaWebtablesAllNegative {
         assertEquals(expectedResult, objDemoAqWebtables.setMailFieldNegative(name, lastname, email, age, salary, department));
     }
     @Test
+    @DisplayName("Заполнение строки вебтаблицы с негативным значением поля Salary")
     public void setSalaryFieldNegative(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
         DemoQaWebtables objDemoAqWebtables = new DemoQaWebtables(driver);
-        //assertEquals("rgb(212, 148, 158)", objDemoAqWebtables.setSalaryFieldNegative(name, lastname, email, age, salary, department));
         assertEquals(expectedResult, objDemoAqWebtables.setSalaryFieldNegative(name, lastname, email, age, salary, department));
     }
     @After

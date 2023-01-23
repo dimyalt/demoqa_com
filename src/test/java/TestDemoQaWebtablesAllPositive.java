@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public class TestDemoQaWebtablesAllPositive {
     private static final String PAGE_URL = "https://demoqa.com/webtables";
 
     @Test
+    @DisplayName("Заполнение строки вебтаблицы с позитивными значениями")
     public void testAddNewString(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);

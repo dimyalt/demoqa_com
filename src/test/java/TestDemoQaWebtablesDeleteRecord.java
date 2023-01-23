@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class TestDemoQaWebtablesDeleteRecord {
     String salary = "87000";
     String department = "Отдел котоглажки";
     @Test
+    @DisplayName("Удаление строки вебтаблицы")
     public void deleteRecord() throws Exception {
         driver = new ChromeDriver();
         driver.get(PAGE_URL);

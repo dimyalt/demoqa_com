@@ -1,7 +1,9 @@
 package sitepages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -24,7 +26,9 @@ public class DemoQaBooksTextboxEmailField {
         driver.findElement(emailField).sendKeys(setEmail);
     }
     public void clickSubmitButton(){
-        driver.findElement(submitButton).click();
+        WebElement buttonSubmit = driver.findElement(submitButton); // Нашли кнопку Submit
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView()", buttonSubmit); // Прокручиваем страницу до кнопки Submit
+        buttonSubmit.click();
     }
 
     public boolean fillEmailField(String setEmail){

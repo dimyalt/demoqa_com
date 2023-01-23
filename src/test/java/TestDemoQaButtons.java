@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Test;
@@ -18,6 +19,7 @@ public class TestDemoQaButtons {
 
 
     @Test
+    @DisplayName("Клик по копке")
     public void clickButtonPositive(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -27,6 +29,7 @@ public class TestDemoQaButtons {
         MatcherAssert.assertThat(result, containsString(clickResult));
     }
     @Test
+    @DisplayName("Двойной клик по кнопке")
     public void doubleClickButtonPositive(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -40,6 +43,7 @@ public class TestDemoQaButtons {
         MatcherAssert.assertThat(result, containsString(doubleClickResult)); // Сравниваем переменную с ожидаемым текстом
     }
     @Test
+    @DisplayName("Клик правой кнопкой")
     public void rightClickButtonPositive(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -53,6 +57,7 @@ public class TestDemoQaButtons {
         MatcherAssert.assertThat(result, containsString(rightClickResult)); // Сравниваем переменную с ожидаемым текстом
     }
     @Test
+    @DisplayName("Двойной клик по кнопке для клика правой кнопкой")
     public void clickButtonNegative(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -71,6 +76,7 @@ public class TestDemoQaButtons {
         assertTrue(result);
     }
     @Test
+    @DisplayName("Клик правой кнопкой мышки по кнопке для одного нажатия")
     public void rightClickButtonNegative(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -79,6 +85,7 @@ public class TestDemoQaButtons {
 
     }
     @Test
+    @DisplayName("Один клик кнопкой по кнопке для двойного нажатия")
     public void doubleClickButtonNegative(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);

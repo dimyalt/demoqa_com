@@ -1,7 +1,9 @@
 package sitepages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -42,8 +44,12 @@ public class DemoQaBooksTextbox {
         driver.findElement(permanentAddressField).sendKeys(setPermanentAddress);
     }
     public void clickSubmitButton(){
-        driver.findElement(submitButton).click();
+        //driver.findElement(submitButton).click();
+        WebElement buttonSubmit = driver.findElement(submitButton); // Нашли кнопку Submit
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView()", buttonSubmit); // Прокручиваем страницу до кнопки Submit
+        buttonSubmit.click();
     }
+
 
     public boolean fillAllFields(String setName, String setEmail, String setCurrentAdress, String setPermanentAddress){
         boolean flag = false;

@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public class TestDemoQaWebtablesEditRecord {
     String newDepartment = "Управление распеделения";
 
     @Test
+    @DisplayName("Редактрование строки вебтаблицы (поле Salary)")
     public void setNewSalaryData() {
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -26,6 +28,7 @@ public class TestDemoQaWebtablesEditRecord {
         assertTrue(objDemoAqWebtables.editSalaryField(name, lastname, email, age, salary, department, newSalary));
     }
     @Test
+    @DisplayName("Редактрование строки вебтаблицы (поле Department)")
     public void setNewDepartmentData() {
         driver = new ChromeDriver();
         driver.get(PAGE_URL);
@@ -33,6 +36,7 @@ public class TestDemoQaWebtablesEditRecord {
         assertTrue(objDemoAqWebtables.editDepartmentField(name, lastname, email, age, salary, department, newDepartment));
     }
     @Test
+    @DisplayName("Редактрование строки вебтаблицы (поля Salary и Department)")
     public void setNewData(){
         driver = new ChromeDriver();
         driver.get(PAGE_URL);

@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Test;
@@ -15,27 +16,30 @@ public class TestDemoQaCheckbox {
     private static final String expectedResultWordExcelFiles = "You have selected :downloadswordFileexcelFile";
 
     @Test
+    @DisplayName("Проверка установки чекбокса Notes")
     public void testChekcboxNotes(){
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения
-        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект гласса главной страницы
-        String result = objCheckboxPage.setNotes(); // кликаем на кнопку логин
+        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект класса главной страницы
+        String result = objCheckboxPage.setNotes(); // кликаем на чекбокс Notes
         MatcherAssert.assertThat(result, containsString(expectedResultNotes));
     }
     @Test
+    @DisplayName("Проверка установки чекбокса WorkSpace")
     public void testChekcboxWorkspace(){
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения
-        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект гласса главной страницы
-        String result = objCheckboxPage.setWorkspace(); // кликаем на кнопку логин
+        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект класса главной страницы
+        String result = objCheckboxPage.setWorkspace(); // кликаем чекбокс WorkSpace
         MatcherAssert.assertThat(result, containsString(expectedResultWorkspace));
     }
     @Test
+    @DisplayName("Проверка установки чекбоксов Files")
     public void testChekcboxWordExcelFiles(){
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения
-        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект гласса главной страницы
-        String result = objCheckboxPage.setWordExcelFiles(); // кликаем на кнопку логин
+        DemoQaCheckbox objCheckboxPage = new DemoQaCheckbox(driver); //Создаем объект класса главной страницы
+        String result = objCheckboxPage.setWordExcelFiles(); // кликаем чекбоксы Files
         MatcherAssert.assertThat(result, containsString(expectedResultWordExcelFiles));
     }
     @After

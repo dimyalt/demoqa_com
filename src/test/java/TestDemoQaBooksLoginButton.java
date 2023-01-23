@@ -1,9 +1,11 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import sitepages.DemoQaBooks;
+
 
 import static org.hamcrest.CoreMatchers.containsString;
 
@@ -14,14 +16,16 @@ public class TestDemoQaBooksLoginButton {
     private static final String expectedResult = "Login";
 
     @Test
+    @DisplayName("Проверка кнопки login в сайдбаре")
     public void testLoginButton() {
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения
-        DemoQaBooks objHomePage = new DemoQaBooks(driver); //Создаем объект гласса главной страницы
+        DemoQaBooks objHomePage = new DemoQaBooks(driver); //Создаем объект класса главной страницы
         String result = objHomePage.clickLoginButton(); // кликаем на кнопку логин
         MatcherAssert.assertThat(result, containsString(expectedResult));
     }
     @Test
+    @DisplayName("Проверка кнопки login в меню")
     public void testLoginButtonMenu() {
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения

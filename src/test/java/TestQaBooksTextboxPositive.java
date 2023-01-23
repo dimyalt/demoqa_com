@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,6 +36,7 @@ public class TestQaBooksTextboxPositive {
     }
 
     @Test
+    @DisplayName("Заполнение формы валидным значением")
     public void testTextbox(){
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения

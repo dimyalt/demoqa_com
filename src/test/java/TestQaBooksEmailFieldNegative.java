@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Test;
@@ -16,6 +17,7 @@ public class TestQaBooksEmailFieldNegative {
 
 
     @Test
+    @DisplayName("Заполнение поля email невалидным значением")
     public void TestTextboxEmailField(){
         driver = new ChromeDriver(); //Драйвер для Chrome
         driver.get(PAGE_URL); //Переходим на главную страницу приложения
